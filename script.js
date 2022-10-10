@@ -9,30 +9,28 @@ form.addEventListener('submit', e=>{
   if(!key_word || !text_to_work){
     alert('preencha os valores corretamente')
   } else {
-    const key_index = getIndex(key_word)
-    const result = encript(text_to_work, key_index)
+    const jumps = getJumps(key_word)
+    const result = encript(text_to_work, jumps)
     result_encript.innerText = result
   }
 })
 
-function getIndex(key_word){
+function getJumps(key_word){
   return key_word.split('').map(c=>(
     alfa.indexOf(c) + 1
   ))
 }
 
-function encript(text_to_work, index){
+function encript(text_to_work, jumps){
   let current_index = 0
   let result = text_to_work.split('').map(c=>{
-    console.log(current_index)
     if(c == ' '){
       return c
     }
     
-    const worked_char = get_position_in_alpha(c, index[current_index])
+    const worked_char = get_position_in_alpha(c, jumps[current_index])
     current_index += 1
-    if(current_index == index.length){
-      console.log('setou')
+    if(current_index == jumps.length){
       current_index = 0
     }
     return worked_char
@@ -44,8 +42,8 @@ function encript(text_to_work, index){
 function get_position_in_alpha(char, jumps){
   const char_position_with_jumps = alfa.indexOf(char) + jumps
   if( char_position_with_jumps > alfa.length - 1){
-    const rest = char_position_with_jumps - (alfa.length - 1)
-    return alfa[rest - 1]
+    const rest = char_position_with_jumps - alfa.length
+    return alfa[rest]
   } else {
     return alfa[char_position_with_jumps]
   }
