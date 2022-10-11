@@ -1,4 +1,3 @@
-
 const alphabet = [
     "A",
     "B",
@@ -26,8 +25,34 @@ const alphabet = [
     "X",
     "Y",
     "Z",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+    " "
 ]
-
 
 function replaceLetter(letter, displacement) {
     const alphabetLength = alphabet.length
@@ -45,7 +70,7 @@ function replaceLetter(letter, displacement) {
 function cryptography(words, displacement) {
     let wordsEncrypted = ""
 
-    for (letter of words.toUpperCase()) {
+    for (letter of words) {
         const letterReplace = replaceLetter(letter, displacement)
         wordsEncrypted += letterReplace
     }
@@ -61,8 +86,6 @@ const resultEncript = document.getElementById("result_encript")
 
 const encryptBtn = document.getElementById("encryptBtn")
 const decryptBtn = document.getElementById("decryptBtn")
-
-
 
 encryptBtn.addEventListener("click", (e) => {
     e.preventDefault()
