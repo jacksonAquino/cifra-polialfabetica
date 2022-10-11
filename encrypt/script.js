@@ -17,7 +17,7 @@ form.addEventListener('submit', e=>{
 
 function getJumps(key_word){
   return key_word.split('').map(c=>(
-    alfa.indexOf(c) + 1
+    alfa.indexOf(c)
   ))
 }
 
