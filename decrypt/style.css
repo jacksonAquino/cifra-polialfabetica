@@ -1,0 +1,54 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.encrypt {
+  width: 500px;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.089);
+  border-radius: 15px;
+}
+
+.encrypt h1 {
+  text-align: center;
+}
+
+.encrypt form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px 25px;
+}
+
+.encrypt form input, 
+.encrypt form button {
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.encrypt form input:focus, 
+.encrypt form button:focus {
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.encrypt form button {
+  width: 50%;
+  background-color: indigo;
+  color: white;
+  font-size: 20px;
+  margin: 10px auto;
+}
+
+.result {
+  text-align: center;
+}
